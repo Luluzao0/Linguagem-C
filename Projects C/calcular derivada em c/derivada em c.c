@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function to evaluate the derivative of a given function at a given point
-double derivative(double (*f)(double), double x)
+// Função para calcular a derivada de uma determinada função em um determinado ponto
+double derivada(double (*f)(double), double x)
 {
-    // Set the step size
+    // Defina o tamanho
     double h = 0.00001;
 
-    // Return the derivative using the definition of the derivative
+    // Retorne a derivada usando a definição da derivada
     return (f(x + h) - f(x)) / h;
 }
 
-// Sample function to find the derivative of
+// Exemplo de função para encontrar a derivada de
 double f(double x)
 {
     return x * x;
@@ -19,11 +19,11 @@ double f(double x)
 
 int main()
 {
-    // Set the point at which to evaluate the derivative
+    // Defina o ponto no qual deseja a derivada
     double x = 2;
 
-    // Evaluate the derivative and print the result
-    printf("The derivative of f(x) at x = %lf is %lf\n", x, derivative(f, x));
+    // Avalie a derivada e imprima o resultado
+    printf("A derivada de f(x) em x= %lf is %lf\n", x, derivada(f, x));
 
     return 0;
 }
